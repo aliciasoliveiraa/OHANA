@@ -9,7 +9,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--admin_dir", type=str, default="./admin/", help="Path to admin directory.")
     parser.add_argument("--username", type=str, default="admin@nvidia.com", help="Admin username.")
-    parser.add_argument("--job", type=str, default="moana-fl-fedprox-t1", help="Path to job")
+    parser.add_argument("--job", type=str, default="ohana-fl-fedprox-t1", help="Path to job")
     args = parser.parse_args()
 
     assert os.path.isdir(args.admin_dir), f"admin directory does not exist at {args.admin_dir}"

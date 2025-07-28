@@ -158,8 +158,6 @@ def _ifft_im(freq_domain: np.ndarray) -> np.ndarray:
     output = np.fft.ifftshift(np.fft.ifftn(freq_domain))
     return output
 
-# NEW ARTIFACTS
-
 def add_susceptibility_artifact(img, susceptibility_factor, blend_factor=0.5):
     """Simulates susceptibility artifact by applying a field strength variation."""
     fat_img = np.roll(img, susceptibility_factor, axis=0)
@@ -201,8 +199,6 @@ def apply_random_artifact(img):
 
     return artifact_img
 
-
-# NEW ARTIFACTS
 
 
 class MotionSimLayer:

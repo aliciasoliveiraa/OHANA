@@ -42,8 +42,8 @@ mlflow.enable_system_metrics_logging()
 #DEUCALION
 mlflow.set_tracking_uri("http://10.2.1.38:5000")
 
-#mlflow.create_experiment(name='MLFlow Moana-FL')
-mlflow.set_experiment(experiment_name='MLFlow Moana FedPROX')
+#mlflow.create_experiment(name='MLFlow OHANA-FL')
+mlflow.set_experiment(experiment_name='MLFlow OHANA FedPROX')
 
 class FedLearner(Learner):
 
@@ -59,13 +59,13 @@ class FedLearner(Learner):
         lambda_ssim=1,
         lambda_vgg=1e-2,
         path_logs='logs/',
-        path_model='/path/to/moana-fl-fedprox/',
+        path_model='/path/to/ohana-fl-fedprox/',
         path_data='/path/to/Data/',
         path_weight='weight/',
         path_saved_models='saved_models',
         reg_type='DatasetFolder',
         save_epoch=10,
-        path_training_time='/path/to/moana-fl-fedprox/training_time.txt',
+        path_training_time='/path/to/ohana-fl-fedprox/training_time.txt',
         path_loss_plot='loss_plots/',
         path_accuracy_plot='accuracy_plots/',
         fedproxloss_mu=1e-5

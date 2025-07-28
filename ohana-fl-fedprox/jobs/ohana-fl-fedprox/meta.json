@@ -1,5 +1,5 @@
 {
-    "name": "moana-fl-fedprox-t1",
+    "name": "ohana-fl-fedprox-t1",
     "resource_spec": {},
     "min_clients": 2,
     "deploy_map": {

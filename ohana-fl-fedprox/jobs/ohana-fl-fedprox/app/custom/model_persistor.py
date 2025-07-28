@@ -43,7 +43,7 @@ class TFModelPersistor(ModelPersistor):
         self.lambda_vgg=1e-2
         self.num_filter=32
         self.num_res_block=9
-        self.path_model='/path/to/moana-fl-fedprox/'
+        self.path_model='/path/to/ohana-fl-fedprox/'
         self.path_weight='weight/'
         self.load_weight_name=None
         self.path_data="/path/to/Data"
@@ -94,7 +94,7 @@ class TFModelPersistor(ModelPersistor):
         return model_learnable
 
     def _evaluate_model_client(self, fl_ctx: FLContext):
-        result_file_path = f'/path/to/moana-fl-fedprox/result_test_job_{fl_ctx.get_job_id()}_clients.txt'
+        result_file_path = f'/path/to/ohana-fl-fedprox/result_test_job_{fl_ctx.get_job_id()}_clients.txt'
         
         job_meta = fl_ctx.get_prop("__job_meta__", default={})
         self.min_clients = job_meta.get("min_clients", "Clients property not found")
@@ -169,7 +169,7 @@ class TFModelPersistor(ModelPersistor):
                 print('-------------------END-------------------')
                 
     def _test_model(self, fl_ctx: FLContext):
-        log_file_path = f'/path/to/moana-fl-fedprox/result_test_job_{fl_ctx.get_job_id()}.txt'
+        log_file_path = f'/path/to/ohana-fl-fedprox/result_test_job_{fl_ctx.get_job_id()}.txt'
         with open(log_file_path, 'a') as log_file, redirect_stdout(log_file), redirect_stderr(log_file):
             print('-------------------START-------------------')
             self.model = MC_Net(img_size=self.image_size,
@@ -182,7 +182,7 @@ class TFModelPersistor(ModelPersistor):
             
             self.load_weight_name=f'job_{fl_ctx.get_job_id()}.h5'
             print('load_weight_name', self.load_weight_name)
-            self.path_save_test= f'/path/to/moana-fl-fedprox/test_job_{fl_ctx.get_job_id()}'
+            self.path_save_test= f'/path/to/ohana-fl-fedprox/test_job_{fl_ctx.get_job_id()}'
             print('path_save_test', self.path_save_test)
             
             self.model.load_weights(self.save_weights_dir + self.load_weight_name)

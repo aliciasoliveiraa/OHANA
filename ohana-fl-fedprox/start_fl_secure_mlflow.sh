@@ -5,11 +5,11 @@
 #SBATCH --output=mlflow_job%j.out  # std out
 #SBATCH --error=mlflow_job%j.err   # std err
 #SBATCH --exclusive
-#SBATCH --account=i20240003g
+#SBATCH --account=<account>
 #SBATCH --time=72:00:00 
 #SBATCH --partition=large-x86
 
-VENV_DIR="/path/to/moana-fl-env"
+VENV_DIR="/path/to/ohana-fl-env"
 
 module load Python/3.9.5-GCCcore-10.3.0
 echo "PYTHONPATH is ${PYTHONPATH}"

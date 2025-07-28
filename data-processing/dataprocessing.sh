@@ -5,7 +5,7 @@
 #SBATCH --output=processing_job%j.out  # std out
 #SBATCH --error=processing_job%j.err   # std err
 #SBATCH --exclusive
-#SBATCH --account=i20240003g
+#SBATCH --account=<account>
 #SBATCH --time=72:00:00 
 #SBATCH --partition=large-x86
 

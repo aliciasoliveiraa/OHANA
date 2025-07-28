@@ -5,11 +5,11 @@
 #SBATCH --output=server_job%j.out  # std out
 #SBATCH --error=server_job%j.err   # std err
 #SBATCH --exclusive
-#SBATCH --account=i20240003g
+#SBATCH --account=<account>
 #SBATCH --time=72:00:00 
 #SBATCH --partition=large-x86
 
-VENV_DIR="/path/to/moana-fl-env"
+VENV_DIR="/path/to/ohana-fl-env"
 
 module load Python/3.9.5-GCCcore-10.3.0
 echo "PYTHONPATH is ${PYTHONPATH}"
@@ -19,7 +19,7 @@ servername=$HOSTNAME
 
 #CREATE WORKSPACE
 
-sed -i "s/originalhostname/${HOSTNAME}/g" /path/to/moana-fl-fedprox/workspaces/project.yml
+sed -i "s/originalhostname/${HOSTNAME}/g" /path/to/ohana-fl-fedprox/workspaces/project.yml
 
 cd "${PWD}/workspaces/"
 
@@ -32,7 +32,7 @@ nvflare provision -p ./project.yml
 cp -r ./workspace/project/prod_00/. ./workspace
 cd ..
 
-sed -i "s/${HOSTNAME}/originalhostname/g" /path/to/moana-fl-fedprox/workspaces/project.yml
+sed -i "s/${HOSTNAME}/originalhostname/g" /path/to/ohana-fl-fedprox/workspaces/project.yml
 
 workspace="${PWD}/workspaces/workspace"
 

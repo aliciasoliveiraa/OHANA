@@ -19,7 +19,7 @@ The framework includes comprehensive code for data processing and the simulation
 **Directory Structure:**
 - *data-processing:* This folder contains scripts for preprocessing of datasets, including format conversions, rotations, resizing, and selection of slices.
 
-- *simulation-model:* This folder contains two levels of artifact severity in medical images. Level 1 contains motion artifacts, and level 2 simulates aliasing, magnetic susceptibility, and noise. 
+- *simulation-model:* This folder contains the artifact simulation model, which simulates motion, aliasing, magnetic susceptibility, and noise. 
 
 - *ohana-fl-fedprox:* This folder contains experiments for the FedProx algorithm. FedProx adds a proximal term to the loss function, which helps handle system heterogeneity across the participating devices.
 
@@ -64,7 +64,7 @@ sbatch dataprocessing.sh
 sbatch simulation_l1.sh
 
 # Simulate artifacts L2
-sbatch simulation_l2.sh
+sbatch simulation.sh
 
 # Correct artifacts
 # Install dependencies (run in a virtual env)
